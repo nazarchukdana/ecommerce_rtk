@@ -1,12 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { isValidElement } from 'react';
 const initialState = {
-    cartItems: []
+    cartItems: [],
 };
 const CartSlice = createSlice({
     name: 'cart',
     initialState,
-    reducer: {
+    reducers: {
         addItemToCart(state, action){
             const existingItem = state.cartItems.find(item => item.id === action.payload.id);
             if (existingItem)
