@@ -31,7 +31,7 @@ const CartSlice = createSlice({
     }
 });
 export const {
-    addItemCart,
+    addItemToCart,
     removeItemFromCart,
     clearCart,
     increaseItemQuantity,
