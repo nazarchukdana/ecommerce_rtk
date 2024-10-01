@@ -6,7 +6,7 @@ import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuanti
 const ShoppingCart = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.cartItems);
-    const totalAmount = cartItems.reduce((total, item) => total + item.price*item.quantity);
+    const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     const handleRemoveItem = itemId => {
         dispatch(removeItemFromCart(itemId));
     };
@@ -40,7 +40,7 @@ const ShoppingCart = () => {
       </ul>
       <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
     </div>
-    <div>{totalAmount ? <div>'The total amount is {totalAmount}'</div> : ''}</div>
+    <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
   
     </>
   );
